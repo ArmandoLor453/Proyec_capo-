@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
 *{
@@ -476,97 +476,107 @@ p{
 }
 
 /* ---------------------------
-   Responsive: tablets y móvil
+   Responsive para celulares
    --------------------------- */
-
-/* Ajustes generales para pantallas medianas (tablets) */
-@media (max-width: 1024px) {
-  .container { padding: 0 20px; }
-
-  /* Header */
-  .header { min-height: 80vh; background-position: center; }
-  .header-content h1 { font-size: 120px; line-height: 1; margin-bottom: 30px; padding: 0 20px; }
-  .header-content p { padding: 0 80px; font-size: 15px; }
-
-  /* Menu */
-  .menu .navbar ul li a { font-size: 16px; padding: 14px; }
-  .menu { padding: 12px 20px; }
-
-  /* Somos */
-  .somos-content h2 { font-size: 40px; line-height: 48px; padding: 0 60px; }
-  .txt-p { padding: 0 60px; }
-  .somos-group { flex-wrap: wrap; justify-content: center; gap: 20px; }
-  .somos-img { max-width: 200px; right: 10px; top: 10px; }
-
-  /* Services */
-  .services { padding: 100px 0; background-attachment: scroll; }
-  .services-content p { padding: 0 60px; }
-  .services-group { gap: 16px; justify-content: center; }
-  .services-1 { width: 220px; padding: 18px; }
-
-  /* General (map / imágenes) */
-  .general { flex-direction: column; }
-  .general-1 { width: 100%; padding: 60px 40px 60px 40px; }
-  .general-2, .general-3 { width: 100%; min-height: 400px; background-size: cover; background-position: center; }
-
-  /* Blog */
-  .blog { padding: 60px 20px; }
-  .blog-content { flex-direction: column; gap: 30px; align-items: center; }
-  .blog-1 img { width: 100%; max-width: 420px; }
-
-  /* Footer */
-  .footer { padding: 60px 20px; }
-  .footer-content { flex-direction: column; gap: 24px; align-items: center; text-align: center; }
-
-  /* Tipos y espaciados */
-  h2 { font-size: 42px; padding: 0 10px; }
-  p { font-size: 15px; }
-}
-
-/* Ajustes para móviles (smartphones) */
 @media (max-width: 768px) {
+  /* Contenedor general */
   .container { padding: 0 12px; }
 
   /* Header */
   .header { min-height: 70vh; }
-  .header-content h1 { font-size: 72px; line-height: 1.05; margin-bottom: 18px; padding: 0 12px; }
-  .header-content p { padding: 0 18px; font-size: 14px; }
+  .header-content h1 {
+    font-size: 12vw;  /* tamaño relativo al ancho */
+    line-height: 1.1;
+    margin-bottom: 16px;
+    padding: 0 12px;
+    word-wrap: break-word;
+  }
+  .header-content p {
+    font-size: 4vw;
+    padding: 0 12px;
+    margin-bottom: 16px;
+  }
 
-  /* Menu: mostrar label para menú tipo hamburguesa si lo tienes */
-  .menu label { display: block; }
-  .menu .navbar { position: absolute; top: 60px; left: 0; right: 0; display: none; background-color: rgba(0,0,0,0.9); z-index: 999; }
-  #menu:checked ~ .navbar { display: block; } /* funcionará si el HTML usa #menu checkbox */
-  .menu .navbar ul li { width: 100%; }
-  .menu .navbar ul li a { padding: 12px 18px; font-size: 16px; }
+  /* Menu tipo hamburguesa */
+  .menu label {
+    display: block;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  .menu .navbar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.95);
+    z-index: 999;
+  }
+  #menu:checked ~ .navbar {
+    display: flex;
+  }
+  .menu .navbar ul li {
+    width: 100%;
+  }
+  .menu .navbar ul li a {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
 
-  /* Somos */
-  .somos-content h2 { font-size: 34px; line-height: 40px; padding: 0 18px; }
-  .txt-p { padding: 0 18px; }
+  /* Sección Somos */
+  .somos-content h2 { 
+    font-size: 8vw;
+    line-height: 1.2;
+    padding: 0 12px;
+  }
+  .txt-p { 
+    font-size: 4vw; 
+    padding: 0 12px; 
+  }
+  .somos-group { 
+    flex-direction: column; 
+    gap: 18px; 
+    align-items: center; 
+  }
+  .somos-1 { 
+    width: 90%; 
+    max-width: 350px; 
+    padding: 20px; 
+  }
 
-  /* Services - apilar */
+  /* Services */
+  .services { padding: 80px 12px; background-attachment: scroll; }
+  .services-content h2 { font-size: 8vw; margin-bottom: 30px; }
+  .services-content p { font-size: 4vw; padding: 0 12px; margin-bottom: 30px; }
   .services-group { flex-direction: column; gap: 18px; }
-  .services-1 { width: 100%; max-width: 420px; }
+  .services-1 { width: 90%; max-width: 400px; }
 
-  /* General (map más grande en móvil relativo al ancho) */
+  /* General (map / imágenes) */
   .general { flex-direction: column; }
-  .general-1 { width: 100%; padding: 30px 18px; }
-  .general-2, .general-3 { width: 100%; min-height: 300px; background-size: cover; background-position: center; margin-top: 12px; }
+  .general-1 { width: 100%; padding: 30px 12px; }
+  .general-2, .general-3 { width: 100%; min-height: 300px; margin-top: 12px; }
 
   /* Blog */
   .blog { padding: 40px 12px; }
-  .blog-1 { padding: 0; }
-  .blog-1 img { width: 100%; height: auto; max-width: none; border-radius: 12px; }
+  .blog-content { flex-direction: column; gap: 30px; align-items: center; }
+  .blog-1 { width: 90%; max-width: 420px; padding: 0; }
+  .blog-1 img { width: 100%; height: auto; border-radius: 12px; }
 
   /* Footer */
   .footer { padding: 40px 12px; }
-  .footer-content { flex-direction: column; text-align: center; }
+  .footer-content { flex-direction: column; text-align: center; gap: 20px; }
 
   /* Tipografía compacta */
-  h2 { font-size: 32px; }
-  p { font-size: 14px; }
+  h2 { font-size: 6vw; }
+  p { font-size: 4vw; }
 
-  /* Evita desbordes */
-  img, iframe, embed, object { max-width: 100%; height: auto; display: block; }
+  /* Imágenes y objetos */
+  img, iframe, embed, object {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
 /* Muy grandes pantallas: ajustar tamaños */
